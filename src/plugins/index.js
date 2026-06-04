@@ -6,7 +6,11 @@ async function appPlugins(fastify) {
 
   // Register CORS agar Swagger UI bisa memanggil API
   await fastify.register(require('@fastify/cors'), {
-    origin: true // Mengizinkan semua origin selama masa pengembangan
+    origin: true, // Mengikuti origin dari request (sangat fleksibel untuk dev)
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
+    credentials: true,
+    preflightContinue: false
   });
 
   // 🔥 Swagger (harus di atas sebelum routes)

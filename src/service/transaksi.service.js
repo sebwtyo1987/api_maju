@@ -213,9 +213,9 @@ async function insertDetailsAndAdjustStock(conn, penjualanId, items) {
 
     await conn.query(
       `INSERT INTO detail_penjualan
-       (penjualan_id, detail_urut, barang_id, jumlah, harga_satuan, subtotal)
-       VALUES (?, ?, ?, ?, ?, ?)`,
-      [penjualanId, detailUrut, barangId, jumlah, hargaSatuan, subtotal]
+       (penjualan_id, detail_urut, barang_id, jumlah, harga_satuan)
+       VALUES (?, ?, ?, ?, ?)`,
+      [penjualanId, detailUrut, barangId, jumlah, hargaSatuan]
     );
 
     await conn.query(
