@@ -1,4 +1,5 @@
 const fp = require('fastify-plugin');
+const path = require('path');
 const errorHandlerPlugin = require('./error-handler');
 const dbConnectorPlugin = require('./db-connector');
 
@@ -22,7 +23,7 @@ async function appPlugins(fastify) {
         version: '1.0.0'
       },
       servers: [
-        { url: 'http://localhost:3001' } // Sesuaikan dengan port yang Anda gunakan
+        { url: 'http://localhost:3456' } // Sesuaikan dengan port yang Anda gunakan
       ]
     }
   });
@@ -38,6 +39,13 @@ async function appPlugins(fastify) {
   // plugin lain
   await fastify.register(errorHandlerPlugin);
   await fastify.register(dbConnectorPlugin);
+
+  // Register static untuk folder download aplikasi
+  await fastify.register(require('@fastify/static'), {
+    root: path.join(__dirname, '..', 'updates', 'download'),
+    prefix: '/updates/download/',
+    decorateReply: false // Menghindari konflik jika plugin lain sudah menggunakan static
+  });
 }
 
 module.exports = fp(appPlugins);
