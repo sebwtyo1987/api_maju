@@ -1,0 +1,37 @@
+{
+  "name": "api_maju",
+  "version": "1.0.0",
+  "description": "backend maju",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "node --check index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebwtyo1987/api_maju.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/cors": "^11.2.0",
+    "@fastify/swagger": "^9.7.0",
+    "@fastify/swagger-ui": "^5.2.6",
+    "axios": "^1.15.2",
+    "bcrypt": "^6.0.0",
+    "cloudinary": "^2.10.0",
+    "fastify": "^5.8.5",
+    "fastify-plugin": "^5.1.0",
+    "mysql2": "^3.11.0"
+  },
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/sebwtyo1987/api_maju/issues"
+  },
+  "homepage": "https://github.com/sebwtyo1987/api_maju#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
