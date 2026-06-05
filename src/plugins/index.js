@@ -43,7 +43,7 @@ async function appPlugins(fastify) {
   // Register static untuk folder download aplikasi
   await fastify.register(require('@fastify/static'), {
     root: path.join(__dirname, '..', 'updates', 'download'),
-    prefix: '/updates/download/',
+    prefix: '/api/v1/updates/download/',
     decorateReply: false // Menghindari konflik jika plugin lain sudah menggunakan static
   });
 }

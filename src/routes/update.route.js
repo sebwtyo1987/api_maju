@@ -10,7 +10,9 @@ async function updateRoutes(fastify) {
           type: 'object',
           properties: {
             app_name: { type: 'string' },
-            download_url: { type: 'string' }
+            app_version: { type: 'string' },
+            download_url: { type: 'string' },
+            download: { type: 'boolean' }
           }
         }
       }
